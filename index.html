@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <!-- link for font awsome library for icons -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!-- linkn for css bootstrap file -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- link for the main css file -->
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="home-body">
+    <div class="container-fluid">
+        <div id="webScreen" class="row">
+            <div class="col-md-8 cards">
+                <!-- ******** starting navbar ********* -->
+                <nav id="homeNav" class="navbar navbar-expand-lg m-0">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">SkyView Weather</a>
+                        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="toggler-icon top-bar"></span>
+                            <span class="toggler-icon mid-bar"></span>
+                            <span class="toggler-icon bottom-bar"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">News</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Live Cameras</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Photos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="html/contact.html">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <!-- ******** starting weather cards section ********* -->
+                <section class="weather-casrds">
+                    <div class="container">
+                            <div id="weatherContainer">
+                                    <div class="col">
+                                        <div id="todayCard" class="weather-card p-3">
+                                            <h2 id="temp"></h2>
+                                            <div class="city-info">
+                                                <h3 class="city"></h3>
+                                                <span id="today"></span>
+                                                <span class="dateToday"></span>
+                                            </div>
+                                            <div class="weather-condition">
+                                                <img class="d-block" id="todayIcon" src="" alt="">
+                                                <span id="condition"></span>
+                                            </div>
+                                            <div class="weather-info">
+                                                <span><i class=""></i> </span>
+                                                <span><i class=""></i> </span>
+                                                <span><i class=""></i> </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div id="tomorrowCard" class="weather-card d-none p-3">
+                                            <div class="d-flex flex-column">
+                                                <h2 class="max-temp" id="tomorrowMaxTemp"></h2>
+                                            </div>
+                                            <div class="city-info">
+                                                <h3 class="city"></h3>
+                                                <span id="tomorrow"></span>
+                                                <span class="dateTomorrow"></span>
+                                            </div>
+                                            <div class="weather-condition">
+                                                <img class="d-block" id="tomorrowIcon" src="" alt="">
+                                                <span id="tomorrowCondition"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                            <div class="col">
+                                <div id="overmorrowCard" class="weather-card d-none p-3">
+                                    <div class="d-flex flex-column">
+                                        <h2 class="max-temp" id="overmorrowMaxTemp"></h2>
+                                    </div>
+                                    <div class="date-info">
+                                        <h3 class="city"></h3>
+                                        <span id="overmorrow"></span>
+                                        <span class="dateOvermorrow"></span>
+                                    </div>
+                                    <div class="weather-condition">
+                                        <img class="d-block" id="overmorrowIcon" src="" alt="">
+                                        <span id="overmorrowCondition"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- ******** starting side bar section ********* -->
+            <div class="col-md-4 p-0">
+                <section class="side">
+                    <div class="side-bar ps-3">
+                        <div class="search-icon shaodw w-100 d-flex justify-content-between align-items-start">
+                            <input type="text" name="text" aria-roledescription="search" id="search" class="form-control mt-5 mb-4" placeholder="Another Location">
+                            <datalist id="cities"></datalist>
+                            <i class="fab fa-sistrix"></i>
+                        </div>
+                        <div class="cities">
+                            <p id="Birmingham">Birmingham</p>
+                            <p id="Manchester">Manchester</p>
+                            <p id="NewYork">New York</p>
+                            <p id="California">California</p>
+                        </div>
+                        <div class="weather-details">
+                            <h6 class="mb-3">Weather Details</h6>
+                            <div class="d-flex justify-content-between">
+                                <p>Pressure</p>
+                                <p id="pressureStatus"></p>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <p>Humidity</p>
+                                <p id="humidityStatus"></p>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <p>Wind</p>
+                                <p id="windStatus"></p>
+                            </div>
+                        </div>
+                        <div class="days">
+                            <p class="mt-3" id="displayTomorrow">Tomorrow</p>
+                            <p id="displayOvermorrow">The day after tomorrow</p>
+                            <p id="backToday" class="d-none">Back to tody</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <!-- ******* starting footer section ******** -->
+        <footer class="pt-5 px-2 text-center">
+            <input type="email" class="form-control mx-auto position-relative" placeholder="Enter your email to subscribe" aria-label="Recipient's email" aria-describedby="basic-addon2">
+            <p class="footer-text mt-3">Copyright 2024 Company name. Coded by Ahmed Aboelwafa. All rights reserved</p>
+            <div class="icons d-flex justify-content-center align-items-center m-4">
+                <div class="btns github"><a href="https://github.com/Aboelwafa2936" target="_blank"><i class="fa-brands fa-github-alt"></i></a></div>
+                <div class="btns linkedin"><a href="https://www.linkedin.com/in/ahmed-abo-el-wafa-121b49255/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></div>
+                <div class="btns whats"><a href="https://wa.me/+201140031203" target="_blank"><i class="fa-brands fa-whatsapp"></i></a></div>
+                <div class="btns mail"><a href="mailto:aboelwafaa213@gmail.com" target="_blank"><i class="fa-regular fa-message"></i></a></div>
+            </div>
+        </footer>
+    </div>
+    <!-- link for js bootstrap file -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- link for main js file -->
+    <script src="js/index.js"></script>
+</body>
+</html>
